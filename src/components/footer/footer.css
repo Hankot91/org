@@ -1,0 +1,36 @@
+.footer{
+    width: 100%;
+    display: flex;
+    padding: 5%;
+    align-items: center;
+    box-sizing: border-box;
+    background-size: cover;
+    background-position: center;
+    justify-content: space-between;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    flex-direction: column;
+}
+
+.redes, .logo{
+    margin-bottom: 2rem;
+}
+
+.redes svg{
+    padding: 0 .9rem;
+}
+
+svg path {
+    fill: rgb(255, 255, 255);
+}
+
+@media screen and (min-width: 768px) {
+    .footer{
+        flex-direction: row;
+    }
+
+    .redes, .logo{
+        margin-bottom: 0;
+    }
+}

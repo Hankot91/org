@@ -1,0 +1,28 @@
+.input-text{
+    margin: 1.5rem 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.input-text label, .input-color label{
+    font-family:  'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.input-text input, .input-color input{
+    width: 100%;
+    background: #FFF;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    border: none;
+    padding: 1.6rem 1.1rem;
+    outline-color: #6278F7;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.input-color input{
+    height: 2.5rem;
+    padding: .31rem 1.3rem;
+}

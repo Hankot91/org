@@ -1,0 +1,69 @@
+.card-container {
+    width: 17.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.close-icon{
+    position: absolute;
+    top: -.9rem;
+    right: -.9rem;
+}
+
+.close-icon path {
+    fill: rgba(255, 3, 3, 0.579);
+}
+
+.like-true path{
+    fill: red;
+}
+
+.like-false path{
+    fill: black;
+}
+
+.close-icon, .like-true, .like-false{
+    cursor: pointer;
+}
+
+.card-header {
+    border-radius: 10px 10px 0px 0px;
+}
+
+.card-figure{
+    margin: 0;
+}
+
+.card-header img {
+    width: 100px;
+    border-radius: 50%;
+    position: relative;
+    bottom: -3.125rem;
+}
+
+.card-article {
+    background: #FFFFFF;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 0px 0px 10px 10px;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    min-height: 100px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card-article h4 {
+    color: #6278F7;
+    font-size: 1.1rem;
+    line-height: 22px;
+    font-weight: bold;
+    margin-bottom: .5rem;
+}
+
+.card-article h5 {
+    font-size: 1.1rem;
+    line-height: 22px;
+    color: #212121;
+    padding: 0 1.5rem;
+    font-weight: 400;
+    margin: 0;
+}

@@ -1,0 +1,17 @@
+.select-container label{
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: .5rem;
+}
+
+.select-container select{
+    width: 100%;
+    background: #FFFF;
+    box-shadow:  10px 10px 30px rgba(0, 0, 0, 0.06);
+    padding: 1.6rem 1.1rem;
+    outline-color: #6278F7;
+    border: none;
+    font-size: 1rem;
+}

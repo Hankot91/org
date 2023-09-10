@@ -1,0 +1,27 @@
+.carousel-container{
+    width: 100%;
+    padding: 2rem;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 2rem;
+    position: relative;
+}
+
+.carousel-container input{
+    position: absolute;
+    top: 1.2rem;
+    right: 3rem;
+}
+
+.carousel-container h3{
+    color: #212121;
+    font-weight: 400;
+    display: inline-block;
+    padding-bottom: .5rem;
+}
+
+.carousel-content{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
