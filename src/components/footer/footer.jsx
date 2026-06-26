@@ -3,6 +3,7 @@ import "./footer.css";
 const Footer = () => {
 	return (
 		<footer
+			className="footer"
 			style={{
 				backgroundImage: `url(${process.env.PUBLIC_URL}/img/footer.png)`,
 			}}
@@ -37,7 +38,11 @@ const Footer = () => {
 					</svg>
 				</a>
 			</div>
-			<img src={`${process.env.PUBLIC_URL}/img/logo.png`} alt="org" className="logo" />
+			<img
+				src={`${process.env.PUBLIC_URL}/img/logo.png`}
+				alt="org"
+				className="logo"
+			/>
 			<strong>Developed by Andres Vanegas</strong>
 		</footer>
 	);
