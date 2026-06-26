@@ -68,7 +68,7 @@ const Form = (props) => {
 				<Input
 					title="Foto"
 					placeholder="Ingresar enlace"
-					required={true}
+					required={false}
 					type={"text"}
 					value={pic}
 					setValue={setPic}

@@ -6,97 +6,100 @@ import Form from "../form/form";
 import MiOrg from "../miorg/miorg";
 import Carousel from "../carousel/carousel";
 
-const Main = () => {
-	const teams = [
-		{
-			id: uuid(),
-			title: "Programación",
-			bg: "#D9F7E9",
-			destaque: "#57C278",
-			workers: [],
-		},
-		{
-			id: uuid(),
-			title: "Front End",
-			bg: "#E8F8FF",
-			destaque: "#82CFFA",
-			workers: [
-				{
-					id: uuid(),
-					name: "Camilo Vanegas",
-					job: "Frontend development",
-					pic: "https://github.com/Hankot91.png",
-					team: "Front End",
-					like: true,
-				},
-			],
-		},
-		{
-			id: uuid(),
-			title: "Data Science",
-			bg: "#F0F8E2",
-			destaque: "#A6D157",
-			workers: [
-				{
-					id: uuid(),
-					name: "Christian Vivaldi",
-					job: "Head e instructor",
-					pic: "https://i.pinimg.com/736x/b0/e2/f5/b0e2f54d141a70986beac46962394651.jpg",
-					team: "Data Science",
-					like: false,
-				},
-			],
-		},
-		{
-			id: uuid(),
-			title: "Devops",
-			bg: "#FDE7E8",
-			destaque: "#E06B69",
-			workers: [
-				{
-					id: uuid(),
-					name: "Jose Palacios",
-					job: "Dev. FullStack",
-					pic: "https://techbriefly.com/wp-content/uploads/2023/02/AI-impersonation-Fake-name-generators-this-person-does-not-exist-images-and-more-1.jpg",
-					team: "Devops",
-					like: false,
-				},
-				{
-					id: uuid(),
-					name: "Marie Quesada",
-					job: "Instructora Devops",
-					pic: "https://cdnstorage.sendbig.com/unreal/female.webp",
-					team: "Devops",
-					like: false,
-				},
-			],
-		},
-		{
-			id: uuid(),
-			title: "UX y Diseño",
-			bg: "#FAE9F5",
-			destaque: "#DB6EBF",
-			workers: [],
-		},
-		{
-			id: uuid(),
-			title: "Móvil",
-			bg: "#FFF5D9",
-			destaque: "#FFBA05",
-			workers: [],
-		},
-		{
-			id: uuid(),
-			title: "Innovación y  Gestión",
-			bg: "#FFEEDF",
-			destaque: "#FF8A29",
-			workers: [],
-		},
-	];
+const initialTeams = [
+	{
+		id: uuid(),
+		title: "Programación",
+		bg: "#D9F7E9",
+		destaque: "#57C278",
+		workers: [],
+	},
+	{
+		id: uuid(),
+		title: "Front End",
+		bg: "#E8F8FF",
+		destaque: "#82CFFA",
+		workers: [
+			{
+				id: uuid(),
+				name: "Camilo Vanegas",
+				job: "Frontend development",
+				pic: "https://github.com/Hankot91.png",
+				team: "Front End",
+				like: true,
+			},
+		],
+	},
+	{
+		id: uuid(),
+		title: "Data Science",
+		bg: "#F0F8E2",
+		destaque: "#A6D157",
+		workers: [
+			{
+				id: uuid(),
+				name: "Christian Vivaldi",
+				job: "Head e instructor",
+				pic: `https://ui-avatars.com/api/?name=Christian+Vivaldi&background=A6D157&color=fff&size=200`,
+				team: "Data Science",
+				like: false,
+			},
+		],
+	},
+	{
+		id: uuid(),
+		title: "Devops",
+		bg: "#FDE7E8",
+		destaque: "#E06B69",
+		workers: [
+			{
+				id: uuid(),
+				name: "Jose Palacios",
+				job: "Dev. FullStack",
+				pic: `https://ui-avatars.com/api/?name=Jose+Palacios&background=E06B69&color=fff&size=200`,
+				team: "Devops",
+				like: false,
+			},
+			{
+				id: uuid(),
+				name: "Marie Quesada",
+				job: "Instructora Devops",
+				pic: `https://ui-avatars.com/api/?name=Marie+Quesada&background=E06B69&color=fff&size=200`,
+				team: "Devops",
+				like: false,
+			},
+		],
+	},
+	{
+		id: uuid(),
+		title: "UX y Diseño",
+		bg: "#FAE9F5",
+		destaque: "#DB6EBF",
+		workers: [],
+	},
+	{
+		id: uuid(),
+		title: "Móvil",
+		bg: "#FFF5D9",
+		destaque: "#FFBA05",
+		workers: [],
+	},
+	{
+		id: uuid(),
+		title: "Innovación y  Gestión",
+		bg: "#FFEEDF",
+		destaque: "#FF8A29",
+		workers: [],
+	},
+];
 
+const Main = () => {
 	const [showForm, setShow] = useState(false);
 	const toggleShow = () => setShow(!showForm);
-	const [getTeams, setTeams] = useState(teams);
+	const [getTeams, setTeams] = useState(() => {
+		const saved = localStorage.getItem("teams");
+		return saved ? JSON.parse(saved) : initialTeams;
+	});
 	const [formData, setFormData] = useState({});
 
 	const getDataWorker = (data) => {
@@ -122,7 +125,7 @@ const Main = () => {
 			});
 			setTeams(updatedTeams);
 		} else {
-			console.log("No se encontró el equipo con la ID especificada.");
+			return;
 		}
 	};
 
@@ -152,9 +155,13 @@ const Main = () => {
 			].workers.filter((worker) => worker.id !== id);
 			setTeams(updatedTeams);
 		} else {
-			console.log("No se encontró el equipo con la ID especificada.");
+			return;
 		}
 	};
+
+	useEffect(() => {
+		localStorage.setItem("teams", JSON.stringify(getTeams));
+	}, [getTeams]);
 
 	useEffect(() => {
 		if (formData.team) {

@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Org
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A team management web app built with **React 18**. Create and organize collaborators across departments, customize team colors, mark favorites and manage your organization visually.
 
-## Available Scripts
+Live demo: [org-hankot91.vercel.app]
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Team catalog** — 7 predefined departments (Frontend, DevOps, Data Science, UX, Mobile, Programming, Innovation) each with its own color.
+- **Add collaborators** — form to register name, role, photo URL and assign to a team.
+- **Add custom teams** — create new departments with a custom color picked from a color picker.
+- **Dynamic color theming** — change a team's accent color in real time directly from its card.
+- **Like collaborators** — toggle a heart icon per collaborator.
+- **Delete collaborators** — remove cards with one click.
+- **Auto-generated avatars** — if no photo URL is provided, an avatar with the collaborator's initials and team color is generated automatically.
+- **Persistent state** — all data is saved in `localStorage` and survives page refreshes.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [React 18](https://react.dev/) (Create React App)
+- CSS Modules (one stylesheet per component)
+- [react-icons](https://react-icons.github.io/react-icons/) — AiFillHeart, AiOutlineHeart, AiFillCloseCircle
+- [uuid](https://www.npmjs.com/package/uuid) — unique IDs for teams and collaborators
+- [hex-to-rgba](https://www.npmjs.com/package/hex-to-rgba) — team background color from accent color
 
-### `npm test`
+## Project structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+src/
+├── components/
+│   ├── button/        # Reusable submit button
+│   ├── card/          # Collaborator card (photo, name, role, like, delete)
+│   ├── carousel/      # Team section with color picker and card list
+│   ├── footer/        # Footer with social links
+│   ├── form/          # Add collaborator + add team forms
+│   ├── header/        # App header
+│   ├── input/         # Reusable text/color input
+│   ├── main/          # Root state — teams, workers, localStorage
+│   ├── miorg/         # "Mi organización" toggle button
+│   └── selectOptions/ # Team dropdown in the form
+├── App.js
+└── index.js
+```
 
-### `npm run build`
+## Running it locally
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/Hankot91/org.git
+cd org
+npm install
+npm start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Opens at `http://localhost:3000`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To reset all data and go back to the initial state, open the browser console (F12) and run:
+```javascript
+localStorage.removeItem('teams')
+```
+Then reload the page.
 
-### `npm run eject`
+## Author
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Camilo Vanegas** ([@Hankot91](https://github.com/Hankot91))  
