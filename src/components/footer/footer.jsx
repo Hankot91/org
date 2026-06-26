@@ -3,8 +3,9 @@ import "./footer.css";
 const Footer = () => {
 	return (
 		<footer
-			className="footer"
-			style={{ backgroundImage: "url(/img/footer.png)" }}
+			style={{
+				backgroundImage: `url(${process.env.PUBLIC_URL}/img/footer.png)`,
+			}}
 		>
 			<div className="redes">
 				<a href="https://www.linkedin.com/in/camilov99/">
@@ -36,7 +37,7 @@ const Footer = () => {
 					</svg>
 				</a>
 			</div>
-			<img src="/img/logo.png" alt="org" className="logo" />
+			<img src={`${process.env.PUBLIC_URL}/img/logo.png`} alt="org" className="logo" />
 			<strong>Developed by Andres Vanegas</strong>
 		</footer>
 	);
