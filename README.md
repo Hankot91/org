@@ -2,7 +2,7 @@
 
 A team management web app built with **React 18**. Create and organize collaborators across departments, customize team colors, mark favorites and manage your organization visually.
 
-Live demo: [org-hankot91.vercel.app]
+Live demo: [https://hankot91.github.io/org/]
 
 ## Features
 
