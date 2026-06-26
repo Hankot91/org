@@ -3,6 +3,7 @@ import "./footer.css";
 const Footer = () => {
 	return (
 		<footer
+			className="footer"
 			style={{
 				backgroundImage: `url(${process.env.PUBLIC_URL}/img/footer.png)`,
 			}}
